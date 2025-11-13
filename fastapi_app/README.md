@@ -13,7 +13,7 @@ This FastAPI app demonstrates:
 
 ## Quick start (developer machine)
 1. Start shared infra:
-   docker compose up -d
+   - docker compose up -d
 
 2. Create a venv and install:
    - cd fastapi_app
@@ -23,16 +23,15 @@ This FastAPI app demonstrates:
    - pip install -r requirements.txt
 
 3. Configure env:
-   cp .env.example .env
-   # Edit .env if needed
+   - cp .env.example .env
 
 4. Apply DB setup (the app auto-creates tables on first run). Just run the app.
 
 5. Run app:
-   uvicorn app.main:app --host 0.0.0.0 --port 8000
+   - uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 6. Visit Swagger:
-   http://<ip>:8000/docs
+   - http://<ip>:8000/docs
 
 ## Endpoints (selected)
 - POST /users/  (create user)            → Postgres
