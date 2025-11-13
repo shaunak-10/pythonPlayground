@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdm
+*.pdm.lock
+
+# Virtual env
+venv/
+env/
+.venv/
+
+# Environment files (keep example)
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Docker volumes
+pgdata/
+mysqldata/
+
+# Byte-compiled / optimized / DLL files
+build/
+dist/
+*.egg-info/
+
+# Flask / Django cache
+instance/
+*.sqlite3

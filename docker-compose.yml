@@ -1,0 +1,72 @@
+version: "3.8"
+
+services:
+
+  postgres:
+    image: postgres:13
+    container_name: dev_postgres
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: testdb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U devuser"]
+      interval: 10s
+      retries: 5
+
+  mysql:
+    image: mysql:8.0
+    container_name: dev_mysql
+    ports:
+      - "13307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: devuser
+      MYSQL_PASSWORD: devpass
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysqldata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1"]
+      interval: 10s
+      retries: 10
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: dev_zookeeper
+    ports:
+      - "12181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "2181"]
+      interval: 10s
+      retries: 10
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: dev_kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "19092:19092"
+    environment:
+      KAFKA_BROKER_ID: "1"
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+
+      KAFKA_LISTENERS: "internal://0.0.0.0:9092,external://0.0.0.0:19092"
+      KAFKA_ADVERTISED_LISTENERS: "internal://kafka:9092,external://localhost:19092"
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: "internal:PLAINTEXT,external:PLAINTEXT"
+      KAFKA_INTER_BROKER_LISTENER_NAME: "internal"
+
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: "1"
+
+volumes:
+  pgdata:
+  mysqldata:

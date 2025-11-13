@@ -1,0 +1,14 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+
+databases[postgresql,mysql]==0.9.0
+SQLAlchemy==2.0.29
+
+psycopg2-binary==2.9.7
+PyMySQL==1.0.3
+
+aiokafka==0.12.0
+httpx==0.24.1
+python-dotenv==1.0.1
+pydantic==1.10.7
+email-validator==2.1.1
