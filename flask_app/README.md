@@ -22,7 +22,8 @@ Quick start (Linux/macOS):
 4. Copy env:
    cp .env.example .env
 5. Run:
-   gunicorn wsgi:application --bind 0.0.0.0:8002 -noreload
+   linux: gunicorn wsgi:application --bind 0.0.0.0:8002 -noreload
+   windows: flask run --host=0.0.0.0 --port=8002
 6. Swagger UI:
    http://127.0.0.1:8002/docs
 
