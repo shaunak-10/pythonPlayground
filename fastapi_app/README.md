@@ -16,11 +16,11 @@ This FastAPI app demonstrates:
    docker compose up -d
 
 2. Create a venv and install:
-   cd fastapi_app
-   /path/to/python -m venv venv
-   source venv/bin/activate(linux)
-   venv\Scripts\activate(windows)
-   pip install -r requirements.txt
+   -cd fastapi_app
+   -/path/to/python -m venv venv
+   -source venv/bin/activate(linux)
+   -venv\Scripts\activate(windows)
+   -pip install -r requirements.txt
 
 3. Configure env:
    cp .env.example .env
