@@ -15,35 +15,33 @@ A minimal Django + DRF app demonstrating:
 ## Quick start (Linux / macOS)
 
 1. Start external services (from repo root):
-   docker compose up -d
+   - docker compose up -d
 
 2. Create & activate a virtualenv:
-   cd django_app
-   path/to/python -m venv venv
-   source venv/bin/activate
+   - cd django_app
+   - path/to/python -m venv venv
+   - source venv/bin/activate
 
 3. Install pinned requirements:
-   pip install -r requirements.txt
+   - pip install -r requirements.txt
 
 4. Copy example env:
-   cp .env.example .env
-   # edit .env if needed
+   - cp .env.example .env
 
 5. Apply migrations:
    # make sure DBs are up (see docker compose)
-   python manage.py makemigrations api
-   python manage.py migrate --database=default
-   python manage.py migrate --database=mysql_db
+   - python manage.py makemigrations api
+   - python manage.py migrate --database=default
+   - python manage.py migrate --database=mysql_db
 
 
 6. Run:
-   linux: gunicorn djproject.wsgi:application --bind 0.0.0.0:8001 -noreload
-   windows: python manage.py runserver 0.0.0.0:8001 --noreload
+   - linux: gunicorn djproject.wsgi:application --bind 0.0.0.0:8001 -noreload
+   - windows: python manage.py runserver 0.0.0.0:8001 --noreload
 
 
 7. Visit docs:
-   Swagger UI: http://127.0.0.1:8001/api/schema/swagger-ui/
-   OpenAPI JSON: http://127.0.0.1:8001/api/schema/
+   - Swagger UI: http://127.0.0.1:8001/api/schema/swagger-ui/
 
 ## Kafka
 - Publish endpoint: POST /kafka/publish/ (JSON body)
