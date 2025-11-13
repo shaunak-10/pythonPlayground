@@ -41,7 +41,7 @@ A minimal Django + DRF app demonstrating:
 
 
 7. Visit docs:
-   - Swagger UI: http://127.0.0.1:8001/api/schema/swagger-ui/
+   - Swagger UI: http://<your-ip>:8001/api/schema/swagger-ui/
 
 ## Kafka
 - Publish endpoint: POST /kafka/publish/ (JSON body)
