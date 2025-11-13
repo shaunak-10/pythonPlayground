@@ -12,20 +12,21 @@ Requirements:
 - Virtualenv per app recommended
 
 Quick start (Linux/macOS):
-1. Start infra: docker compose up -d
-2. Create venv:
-   cd flask_app
-   path/to/python -m venv venv
-   source venv/bin/activate
-3. Install:
-   pip install -r requirements.txt
-4. Copy env:
-   cp .env.example .env
-5. Run:
-   linux: gunicorn wsgi:application --bind 0.0.0.0:8002 -noreload
-   windows: flask run --host=0.0.0.0 --port=8002 --no-debugger --no-reload
-6. Swagger UI:
-   http://127.0.0.1:8002/docs
+1. Start infra:
+   - docker compose up -d
+3. Create venv:
+   - cd flask_app
+   - path/to/python -m venv venv
+   - source venv/bin/activate
+4. Install:
+   - pip install -r requirements.txt
+5. Copy env:
+   - cp .env.example .env
+6. Run:
+   - linux: gunicorn wsgi:application --bind 0.0.0.0:8002 -noreload
+   - windows: flask run --host=0.0.0.0 --port=8002 --no-debugger --no-reload
+7. Swagger UI:
+   - http://ip:8002/docs
 
 Kafka:
 - POST /api/kafka/publish with JSON body like:
