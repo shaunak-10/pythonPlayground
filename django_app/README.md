@@ -38,7 +38,7 @@ A minimal Django + DRF app demonstrating:
 
 6. Run:
    linux: gunicorn djproject.wsgi:application --bind 0.0.0.0:8001 -noreload
-   windows: python manage.py runserver 0.0.0.0:8001
+   windows: python manage.py runserver 0.0.0.0:8001 --noreload
 
 
 7. Visit docs:
