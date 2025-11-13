@@ -26,5 +26,5 @@ All three apps **share**:
 ## 🚀 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/python-apm-playground.git
+git clone https://github.com/shaunak-10/pythonPlayground.git
 cd python-apm-playground
