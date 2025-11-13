@@ -31,7 +31,7 @@ This FastAPI app demonstrates:
    - uvicorn app.main:app --host 0.0.0.0 --port 8000
 
 6. Visit Swagger:
-   - http://<ip>:8000/docs
+   - http://ip:8000/docs
 
 ## Endpoints (selected)
 - POST /users/  (create user)            → Postgres
