@@ -37,7 +37,9 @@ A minimal Django + DRF app demonstrating:
 
 
 6. Run:
-   gunicorn djproject.wsgi:application --bind 0.0.0.0:8001 -noreload
+   linux: gunicorn djproject.wsgi:application --bind 0.0.0.0:8001 -noreload
+   windows: python manage.py runserver 0.0.0.0:8001
+
 
 7. Visit docs:
    Swagger UI: http://127.0.0.1:8001/api/schema/swagger-ui/
