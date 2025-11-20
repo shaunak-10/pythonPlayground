@@ -54,10 +54,13 @@ Verify
 Visit: http://10.20.40.253:8000/docs
 
 2. Django Application
+   
 2.1 Load Image
+
 docker load -i django-app.tar
 
 2.2 Normal Run
+
 docker run \
   --env-file django_app/.env.docker \
   --network=pythonplayground_default \
@@ -65,6 +68,7 @@ docker run \
   django-app
 
 2.3 Instrumented Run
+
 docker run -d \
   --add-host=host.docker.internal:host-gateway \
   -v "/motadata/motadata/config:/motadata/motadata/config" \
@@ -81,10 +85,13 @@ Verify
 Visit: http://10.20.40.253:8001/api/schema/swagger-ui/
 
 3. Flask Application
+   
 3.1 Load Image
+
 docker load -i flask-app.tar
 
 3.2 Normal Run
+
 docker run \
   --env-file flask_app/.env.docker \
   --network=pythonplayground_default \
@@ -92,6 +99,7 @@ docker run \
   flask-app
 
 3.3 Instrumented Run
+
 docker run -d \
   --add-host=host.docker.internal:host-gateway \
   -v "/motadata/motadata/config:/motadata/motadata/config" \
