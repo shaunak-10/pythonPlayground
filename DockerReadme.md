@@ -23,10 +23,13 @@ docker compose up -d
 This brings up Postgres, MySQL, Kafka, and other dependencies.
 
 1. FastAPI Application
+   
 1.1 Load Image
+   
 docker load -i fastapi-app.tar
 
 1.2 Normal Run
+
 docker run \
   --env-file fastapi_app/.env.docker \
   --network=pythonplayground_default \
@@ -34,6 +37,7 @@ docker run \
   fastapi-app
 
 1.3 Instrumented Run
+
 docker run -d \
   --add-host=host.docker.internal:host-gateway \
   -v "/motadata/motadata/config:/motadata/motadata/config" \
